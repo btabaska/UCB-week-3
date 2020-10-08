@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var myFarm = ["chickens", "pigs", "cows", "horses", "ostriches"];
+
+      myFarm.forEach(printOut);
+      var x = myFarm.filter(filterStrings);
+      x.forEach(alertOut);
+
+      function printOut(item, index) {
+        console.log(item);
+      }
+
+      function alertOut(item, index) {
+        alert(item + " Starts with a C or an O");
+      }
+
+      function filterStrings(item) {
+        if (item.charAt(0) == "c") {
+          return item;
+        } else if (item.charAt(0) == "o") {
+          return item;
+        }
+      }
+    </script>
+  </body>
+</html>

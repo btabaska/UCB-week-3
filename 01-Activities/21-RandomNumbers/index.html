@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //takes in two arguements, a min number and a max number
+      function getRandomArbitrary(min, max) {
+        //sets min equal to the ceiling of min, so the number itself
+        min = Math.ceil(min);
+        // does the smae for max, but sets it to the lowest value possible
+        max = Math.floor(max);
+        //returns math.floor of the generated number times the max minus the min plus 1 and then adds the min
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      console.log(getRandomArbitrary(1, 10));
+    </script>
+  </body>
+</html>

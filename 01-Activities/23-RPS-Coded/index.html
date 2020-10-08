@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //set up a score
+      var userScore = 0;
+      var aiScore = 0;
+      var rpsChoices = ["rock", "paper", "scissors"];
+
+      alert("Welcome to Rock Paper Scissors");
+
+      for (i = 0; i < 10; i++) {
+        var userInput = prompt(
+          "Type in rock, paper, or scissors to select your move!"
+        );
+        var aiChoice = getRandomArbitrary(0, 2);
+        console.log(rpsChoices[aiChoice]);
+
+        if (userInput.toLowerCase() == rpsChoices[aiChoice]) {
+          alert("Its a tie!");
+        } else if (
+          userInput.toLowerCase() == "rock" &&
+          rpsChoices[aiChoice] == "scissors"
+        ) {
+          alert("Rock beats Scissors!");
+          userScore += 1;
+        } else if (
+          userInput.toLowerCase() == "scissors" &&
+          rpsChoices[aiChoice] == "paper"
+        ) {
+          alert("Scissors beats Paper!");
+          userScore += 1;
+        } else if (
+          userInput.toLowerCase() == "paper" &&
+          rpsChoices[aiChoice] == "rock"
+        ) {
+          alert("Paper beats Rock!");
+          userScore += 1;
+        } else {
+          alert("Sorry, but " + rpsChoices[aiChoice] + " beats " + userInput);
+          aiScore += 1;
+        }
+      }
+
+      if (userScore > aiScore) {
+        alert("You win! Score is " + userScore + " to " + aiScore);
+      } else if (userScore == aiScore) {
+        alert("its a tie!");
+      } else {
+        alert("You Lose! Score is " + userScore + " to " + aiScore);
+      }
+
+      function getRandomArbitrary(min, max) {
+        //sets min equal to the ceiling of min, so the number itself
+        min = Math.ceil(min);
+        // does the smae for max, but sets it to the lowest value possible
+        max = Math.floor(max);
+        //returns math.floor of the generated number times the max minus the min plus 1 and then adds the min
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+    </script>
+  </body>
+</html>
