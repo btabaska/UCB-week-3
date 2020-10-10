@@ -27,10 +27,7 @@
       alert("Welcome, " + OSName + " User!");
 
       if (window.navigator.geolocation) {
-        window.navigator.geolocation.getCurrentPosition(
-          eastOrWest,
-          console.log
-        );
+        window.navigator.geolocation.getCurrentPosition(eastOrWest, noLocation);
       }
 
       function eastOrWest(object) {
@@ -40,6 +37,10 @@
         } else {
           alert("Welcome Western Half of the US User");
         }
+      }
+
+      function noLocation(object) {
+        alert("Sorry, I need your location to proceed.");
       }
     </script>
   </body>
