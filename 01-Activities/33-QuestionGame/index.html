@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var questionsArray = [
+        { q: "Is the sky blue?", a: "yes" },
+        { q: "Is grass green?", a: "yes" },
+        { q: "what color is an orange?", a: "orange" },
+        { q: "what color is paper?", a: "white" },
+        { q: "what color is the ocean?", a: "blue" },
+        { q: "what is 2 + 2?", a: "4" },
+        { q: "what is 7 * 2?", a: "14" },
+        { q: "What year is it?", a: "2020" },
+        { q: "What state is San Francisco in?", a: "california" },
+        { q: "what fruit is red and used in a BLT?", a: "tomato" },
+      ];
+
+      var score = 0;
+
+      questionsArray.forEach(questionFunction);
+
+      function questionFunction(item, index) {
+        var userAnswer = prompt(item.q);
+        console.log(userAnswer + " : " + item.a);
+
+        if (userAnswer.toLowerCase() == item.a) {
+          score += 1;
+          alert("Correct!");
+        } else {
+          alert("Sorry, Incorrect!");
+        }
+      }
+
+      alert("Your final score is " + score);
+    </script>
+  </body>
+</html>
