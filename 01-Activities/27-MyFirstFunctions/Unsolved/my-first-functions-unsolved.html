@@ -1,81 +1,113 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>My First Function</title>
   </head>
   <body>
-
     <h1>Open the console to see the magic!</h1>
 
     <script>
-
       // FUNCTIONS
       // ================================================================================
 
       // Create a Function called "adder" that take three arguments (x, y, z).
       // The function should add the arguments together, and log the result to the console.
 
+      function adder(x, y, z) {
+        result = x + y + z;
+        console.log(result);
+      }
 
       // Create a Function called "multiplier" that takes three arguments (x, y, z).
       // The function should multiply the arguments, and log the result to the console.
 
+      function multiplier(x, y, z) {
+        result = x * y * z;
+        console.log(result);
+      }
 
       // Create a Function called "isString" that takes three arguments (x, y, z).
       // "isString" determines if all three arguments are strings and logs an appropriate response to the console.
 
+      function isString(x, y, z) {
+        if (typeof x == "string") {
+          if (typeof y == "string") {
+            if (typeof z == "string") {
+              console.log("All three are strings!");
+            }
+          }
+        }
+      }
 
       // Create a Function called "vowelChecker" that takes in a single argument (x).
       // "vowelChecker" logs whether or not the input is a vowel.
 
+      function vowelChecker(x) {
+        if (x.length == 1) {
+          var vowels = ["a", "e", "i", "o", "u"];
+          var isVowel = false;
 
+          for (i in vowels) {
+            if (vowels[i] == x) {
+              isVowel = true;
+            }
+          }
+
+          if (isVowel) {
+            console.log("x is a vowel");
+          }
+        }
+      }
       // BONUS
       // Creates a version of "adder" that returns its result. Function is called "adderReturn".
-
+      function adderReturn(x, y, z) {
+        return (result = x + y + z);
+      }
 
       // Creates a version of "multiplier" that returns its result. Function is called "multiplierReturn".
 
+      function multiplierReturn(x, y, z) {
+        return (result = x * y * z);
+      }
 
       // FUNCTION EXECUTION
       // ================================================================================
 
       // Add in the lines of code below necessary to call the functions we created above.
 
-
       // Call the adder function here.
 
-
       console.log("-------------------");
-
+      adder(1, 2, 3);
 
       // Call the multiplier function here.
 
-
       console.log("-------------------");
-
+      multiplier(1, 2, 3);
 
       // Call the isString function here.
-
+      isString("apple", "bee", "cookie");
 
       console.log("-------------------");
-
 
       // Call the vowelChecker function here.
-
+      vowelChecker("a");
 
       console.log("-------------------");
-
 
       // BONUS
       // Call the adderReturn function here and set it equal to a variable. Then log that variable to the console.
 
-
       console.log("-------------------");
 
+      myResult = adderReturn(1, 2, 3);
+      console.log(myResult);
 
       // Call the multiplierReturn function here and set it equal to a variable. Then log that variable to the console.
 
+      myResult2 = multiplierReturn(1, 4, 3);
+      console.log(myResult2);
     </script>
-
   </body>
 </html>
